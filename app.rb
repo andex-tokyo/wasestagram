@@ -23,8 +23,8 @@ end
 
 post '/pic' do
   @ip = request.ip
-  picPath = "/tmp/images/posted_#{@ip}.jpg"
-  profilePath = "/tmp/images/profile_#{@ip}.jpg"
+  picPath = "/tmp/posted_#{@ip}.jpg"
+  profilePath = "/tmp/profile_#{@ip}.jpg"
   image = params[:pic][:tempfile]
   profile = params[:profile][:tempfile]
   name = params[:name]
@@ -63,10 +63,10 @@ post '/pic' do
           iine.draw(result)
           comments.draw(result)
           hash.draw(result)
-          result.write("/tmp/images/result_#{@ip}.jpg")
+          result.write("/tmp/result_#{@ip}.jpg")
         end
       end
     end
   end
-  send_file("/tmp/images/result_#{@ip}.jpg")
+  send_file("/tmp/result_#{@ip}.jpg")
 end
