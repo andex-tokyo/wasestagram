@@ -2,14 +2,14 @@ require 'bundler/setup'
 Bundler.require
 require 'sinatra/reloader' if development?
 
-def draw_text(draw, x, y, text, size=23.5 , color='black', font="/home/ubuntu/workspace/public/fonts/Yu_Gothic.otf")
+def draw_text(draw, x, y, text, size=23.5 , color='black', font="/app/public/fonts/Yu_Gothic.otf")
   draw.font = font
   draw.pointsize = size
   draw.stroke(color)
   draw.text(x, y, text)
 end
 
-def draw_hash(draw, x, y, text, size=23.5 , color='#005c9b', font="/home/ubuntu/workspace/public/fonts/Yu_Gothic.otf")
+def draw_hash(draw, x, y, text, size=23.5 , color='#005c9b', font="/app/public/fonts/Yu_Gothic.otf")
   draw.font = font
   draw.pointsize = size
   draw.stroke(color)
