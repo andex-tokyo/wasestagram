@@ -38,7 +38,7 @@ post '/pic' do
       front = original.resize_to_fit(590, 400)
       back = Magick::Image.read('public/frame.jpg').first
       width = 297.5 - (front.columns/2)
-      height = 300 - (front.rows/2)
+      height = 400 - (front.rows/2)
       posted = back.composite(front, width , height, Magick::OverCompositeOp)
       open(profilePath, 'wb') do |profileOutput|
         open(profile) do |profileData|
