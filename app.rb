@@ -46,7 +46,8 @@ post '/pic' do
           proOriginal = Magick::Image.read(profilePath).first
           proFront = proOriginal.resize(51, 51)
           masked = mask.composite(proFront, 0, 0, Magick::SrcInCompositeOp)
-          result = posted.composite(masked, 30 , 117, Magick::OverCompositeOp)
+          icon = posted.composite(masked, 511 , 784, Magick::OverCompositeOp)
+          result = icon.composite(masked, 30 , 117, Magick::OverCompositeOp)
           user = Magick::Draw.new
           draw_text(user, 98,145,name)
           user2 = Magick::Draw.new
