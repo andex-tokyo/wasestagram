@@ -55,7 +55,8 @@ post '/pic' do
           draw_text(user2, 32,723,name)
           namewidth = user2.get_type_metrics(name).width
           iine = Magick::Draw.new
-          draw_text(iine, 135,688,good)
+          iinewidth = iine.get_type_metrics(good).width
+          draw_text(iine, 138-(iinewidth/2),687,good)
           comments = Magick::Draw.new
           draw_text(comments,45 + namewidth,723,comment)
           hash =  Magick::Draw.new
